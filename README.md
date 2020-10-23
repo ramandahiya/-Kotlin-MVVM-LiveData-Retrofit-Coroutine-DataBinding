@@ -10,11 +10,6 @@ MVVM(Model View ViewModel) sample in Kotlin using the components ViewModel, Live
 ### MVVM Pattern (Model View ViewModel)
  <img src="assets/AndroidMVVM.png">
 
-### Demo
-
-<img src="assets/kotlinmvvmscreenrotation720.gif?raw=true" height="480">
-
-<img src="assets/kotlinmvvm720.gif?raw=true" height="480"> 
 
 ### Architecture
 <img src="assets/architecture.png" height="540">
@@ -22,11 +17,6 @@ MVVM(Model View ViewModel) sample in Kotlin using the components ViewModel, Live
 ### Flow
 <img src="assets/MVVMFlow.png" height="540">
  
-### Screenshots
-
-<img src="assets/screenshot.png" height="480"> <img src="assets/screenshot_error.png" height="480"> <img src="assets/screenshot_empty.png" height="480">
-
-<img src="assets/unit_tests.png" height="196"> 
 
 ### Slides
 
