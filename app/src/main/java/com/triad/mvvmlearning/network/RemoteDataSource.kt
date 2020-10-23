@@ -1,6 +1,6 @@
 package com.triad.mvvmlearning.network
 
-import com.triad.mvvmlearning.BuildConfig
+import androidx.databinding.library.BuildConfig
 import com.triad.mvvmlearning.utility.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
