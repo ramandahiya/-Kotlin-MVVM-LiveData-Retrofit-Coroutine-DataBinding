@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.res.Configuration
 
 /**
- * Created by Raman on 16-07-2016.
+ * Created by Raman on 16-07-2018.
  */
 class App : Application() {
     init {

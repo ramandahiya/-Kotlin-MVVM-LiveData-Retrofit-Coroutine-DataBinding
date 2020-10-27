@@ -6,7 +6,7 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface HomeApi {
-     @POST(Constants.Url.dashboard_data)
+     @POST(Constants.Url.login)
      suspend fun login(@Body body: HashMap<String,String>) : Array<LoginResponse>
 
  }

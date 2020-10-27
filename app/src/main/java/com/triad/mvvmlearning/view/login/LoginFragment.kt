@@ -25,8 +25,8 @@ import com.triad.mvvmlearning.view.dashbord.MainActivity
 class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding, LoginRepository>() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
 
+       super.onActivityCreated(savedInstanceState)
 
         viewModel.loginResponse.observe(viewLifecycleOwner, Observer {
 
@@ -139,9 +139,7 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding, LoginRe
 
     override fun getViewModel() = LoginViewModel::class.java
 
-    override fun getFragmentBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?) : ViewDataBinding {
+    override fun getFragmentBinding(inflater: LayoutInflater, container: ViewGroup?) : ViewDataBinding {
 
       return  DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
 

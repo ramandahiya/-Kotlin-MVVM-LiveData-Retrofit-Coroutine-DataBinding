@@ -9,8 +9,7 @@ import com.triad.mvvmlearning.repository.LoginRepository
 import com.triad.mvvmlearning.responses.loginresponse.LoginResponse
 import kotlinx.coroutines.launch
 
-class LoginViewModel(
-    private var repository: LoginRepository) : ViewModel() {
+class LoginViewModel(private var repository: LoginRepository) : ViewModel() {
 
     private val _loginResponse: MutableLiveData<Resource<LoginResponse>> = MutableLiveData()
 

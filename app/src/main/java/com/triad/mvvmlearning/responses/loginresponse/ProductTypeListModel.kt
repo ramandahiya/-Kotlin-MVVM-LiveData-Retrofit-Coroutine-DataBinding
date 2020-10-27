@@ -1,7 +1,7 @@
 package com.triad.mvvmlearning.responses.loginresponse
 
 /**
- * Created by Raman on 04-04-2017.
+ * Created by Raman on 04-04-2018.
  */
  data class ProductTypeListModel (
     var message: String? ,
