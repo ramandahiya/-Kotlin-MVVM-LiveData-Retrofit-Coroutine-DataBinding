@@ -3,4 +3,19 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+
+    <color name="no_data_color">#263238</color>
+    <color name="table_header_color">#263238</color>
+    <color name="table_text_color">#ffffff</color>
+    <color name="heading_color">#263238</color>
+    <color name="heading_text_color">#ffffff</color>
+    <color name="button_color">#263238</color>
+    <color name="text_color">#263238</color>
+    <color name="tabs_custom_color">#263238</color>
+    <color name="tabs_custom_text_color">#ffffff</color>
+    <color name="tabs_custom_unselected_color">#ffffff</color>
+    <color name="tabs_custom_unselected_text_color">#263238</color>
+    <color name="black_cool">#263238</color>
+
 </resources>

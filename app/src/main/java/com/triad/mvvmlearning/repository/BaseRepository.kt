@@ -26,4 +26,18 @@ abstract class BaseRepository {
             }
         }
     }
+
+
+    suspend fun <T> safeApiCall2(apiCall : suspend () -> T ): T {
+
+        return withContext(Dispatchers.IO){
+
+            apiCall.invoke()
+
+
+        }
+
+
+
+    }
 }
