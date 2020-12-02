@@ -16,6 +16,7 @@ import com.triad.mvvmlearning.repository.SavedFeedRepository
 import com.triad.mvvmlearning.responses.loginresponse.SavedFeedbackResponse
 import com.triad.mvvmlearning.utility.Constants
 import com.triad.mvvmlearning.utility.snackbar
+import com.triad.mvvmlearning.utility.test
 import com.triad.mvvmlearning.utility.visible
 import com.triad.mvvmlearning.view.BaseFragment
 
@@ -88,12 +89,20 @@ class SavedFeedbackFragment : BaseFragment<SavedFeedbackViewModel, FragmentSaved
         paramObject.put("device", "Device")
 
 
+        //var t : test = test()
+        //t.testmetod()
+//        method(object : test(){
+//
+//        })
         binding.loaderLayout.visibility = View.VISIBLE
         //binding.progressView.startAnimation()
 
         viewModel.fetch(paramObject)
     }
 
+    fun method (test: test){
+
+    }
 
     override fun getViewModel() = SavedFeedbackViewModel::class.java
 

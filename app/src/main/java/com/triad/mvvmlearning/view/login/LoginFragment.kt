@@ -10,8 +10,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import com.triad.mvvmlearning.R
+import com.triad.mvvmlearning.app.App
 import com.triad.mvvmlearning.databinding.FragmentLoginBinding
 import com.triad.mvvmlearning.network.AuthApi
+import com.triad.mvvmlearning.network.RemoteDataSource
 import com.triad.mvvmlearning.network.Resource
 import com.triad.mvvmlearning.repository.LoginRepository
 import com.triad.mvvmlearning.responses.loginresponse.LoginResponse
@@ -20,13 +22,21 @@ import com.triad.mvvmlearning.utility.PreferenceConfigration
 import com.triad.mvvmlearning.utility.UtilityMethods
 import com.triad.mvvmlearning.view.BaseFragment
 import com.triad.mvvmlearning.view.dashbord.MainActivity
+import javax.inject.Inject
 
 
 class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding, LoginRepository>() {
 
+
+//    @Inject
+//    lateinit var remoteDataSource2 : RemoteDataSource
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
 
        super.onActivityCreated(savedInstanceState)
+
+//        (activity?.application as App).component
+//            .inject(this)
 
         viewModel.loginResponse.observe(viewLifecycleOwner, Observer {
 
@@ -38,13 +48,13 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding, LoginRe
 
                     SavePreference(it.value);
 
-                    Toast.makeText( requireContext(),"Logged In", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Logged In", Toast.LENGTH_SHORT).show()
 
                 }
 
                 is Resource.Failure -> {
 
-                    Toast.makeText(requireContext(),"Login Failed", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Login Failed", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -53,7 +63,7 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding, LoginRe
         binding.login.setOnClickListener {
 
 
-                val paramObject = HashMap<String,String>()
+                val paramObject = HashMap<String, String>()
                 paramObject.put("username", binding.username.text.toString())
                 paramObject.put("password", binding.password.text.toString())
                 paramObject.put("login_type", "login")
@@ -63,8 +73,16 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding, LoginRe
                 viewModel.login(paramObject)
 
         }
+//        DaggerAppComponent.builder().application(githubApp)
+//            .build().inject(githubApp)
+//        component = DaggerAppComponent.builder().build();
+//        component.inject(this);
 
+      //  val callServer = backendService!!.callServer()
+
+        // remoteDa.testmetod(App.applicationContext())
     }
+
 
     private fun SavePreference(value: LoginResponse) {
 
@@ -73,7 +91,7 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding, LoginRe
         val uniquecode: String = value.data.uniquecode
 
 
-        UtilityMethods.setTokenValue(value.data.token )
+        UtilityMethods.setTokenValue(value.data.token)
 
         PreferenceConfigration.setPreference(
             Constants.PreferenceConstants.USER_ID,
@@ -91,7 +109,7 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding, LoginRe
         PreferenceConfigration.setPreference(Constants.PreferenceConstants.FIRST_NAME, fname)
         PreferenceConfigration.setPreference(
             Constants.PreferenceConstants.Role,
-           "am"
+            "am"
         )
 
         PreferenceConfigration.setPreference(Constants.PreferenceConstants.UNIQUE_CODE, uniquecode)
