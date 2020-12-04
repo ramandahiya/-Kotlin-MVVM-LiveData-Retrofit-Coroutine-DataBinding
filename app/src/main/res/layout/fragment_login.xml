@@ -74,6 +74,17 @@
         android:text="@string/action_sign_in"
          />
 
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_margin="22dp"
+
+        android:text="@string/action_sign_in"
+        />
+
+
     <ProgressBar
         android:id="@+id/loading"
         android:layout_width="wrap_content"

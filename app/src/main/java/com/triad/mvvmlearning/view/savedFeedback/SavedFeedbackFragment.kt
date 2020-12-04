@@ -8,6 +8,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.triad.mvvmlearning.R
 import com.triad.mvvmlearning.app.App
 import com.triad.mvvmlearning.databinding.FragmentSavedFeedbackBinding
 import com.triad.mvvmlearning.interfaces.ClickListener

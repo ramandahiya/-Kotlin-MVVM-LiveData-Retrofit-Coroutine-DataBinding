@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import com.triad.mvvmlearning.R
 import com.triad.mvvmlearning.app.App
 import com.triad.mvvmlearning.databinding.FragmentLoginBinding
@@ -72,6 +74,18 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding, LoginRe
 
                 viewModel.login(paramObject)
 
+        }
+
+        binding.signup.setOnClickListener {
+
+//            val amount = "text"
+//            val action =  LoginFragmentDirections.actionLoginFragmentToForgotPassword(amount)
+//            it.findNavController().navigate(action)
+
+            // Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_forgotPassword)
+
+                   val bundle = bundleOf("amount" to "data")
+                  it.findNavController().navigate(R.id.action_loginFragment_to_signUpFragment, bundle)
         }
 //        DaggerAppComponent.builder().application(githubApp)
 //            .build().inject(githubApp)
