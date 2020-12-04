@@ -37,5 +37,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
     </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/heading"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="75dp"
+        android:scrollbars="none"
+        android:background="@null"
+        android:divider="@null" />
 
 </layout>

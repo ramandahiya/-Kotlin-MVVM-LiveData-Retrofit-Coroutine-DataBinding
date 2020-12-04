@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_auth"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/notiFragment"
+        android:name="com.triad.mvvmlearning.view.dashbord.ui.notifications.NotificationsFragment"
+        android:label="fragment_noti"
+        tools:layout="@layout/fragment_notifications" >
+
+        <action
+            android:id="@+id/action_notiFragment_to_notiDetailFragment"
+            app:destination="@id/notiDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notiDetailFragment"
+        android:name="com.triad.mvvmlearning.view.dashbord.ui.notifications.NotificationsDetailsFragment"
+        android:label="fragment_noti_up"
+        tools:layout="@layout/fragment_notifications_details" />
+</navigation>

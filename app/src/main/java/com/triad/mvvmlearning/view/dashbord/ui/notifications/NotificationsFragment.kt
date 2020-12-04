@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.triad.mvvmlearning.R
 import com.triad.mvvmlearning.app.App
 import com.triad.mvvmlearning.databinding.FragmentNotificationsBinding
@@ -33,14 +37,23 @@ class NotificationsFragment  : BaseFragment<NotificationsViewModel, FragmentNoti
         override fun onItemClick(item: SavedFeedbackResponse.Data?,
                                  position: Int) {
 
-          //  Toast.makeText(context, "Hello Javatpoint", Toast.LENGTH_LONG).show()
-//                    val args = Bundle()
-//        args.putParcelable("amount" , item)
-//        findNavController().navigate(R.id.action_navigation_saved_feedback_to_navigation_detail, args)
+//          val bundle = bundleOf("amount" to "data")
+//          it.findNavController().navigate(R.id.action_loginFragment_to_signUpFragment, bundle)
+
+
+                    val args = Bundle()
+        args.putParcelable("amount" , item)
+       binding.recyclerView.findNavController().navigate(R.id.action_navigation_notifications_to_navigation_notifications_details, args)
 
       }
       })
 
+    val layoutManager = LinearLayoutManager(context)
+
+    binding.recyclerView.layoutManager = layoutManager
+    binding.recyclerView.hasFixedSize()
+    binding.recyclerView.addItemDecoration(DividerItemDecoration(context, layoutManager.orientation))
+    binding.recyclerView.adapter = notificationAdapter
 
     viewModel.apiResponse.observe(viewLifecycleOwner, Observer {
 

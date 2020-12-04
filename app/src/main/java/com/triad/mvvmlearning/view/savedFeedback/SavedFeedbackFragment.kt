@@ -75,7 +75,7 @@ class SavedFeedbackFragment : BaseFragment<SavedFeedbackViewModel, FragmentSaved
         binding.listViewSavedFeedback.addItemDecoration(DividerItemDecoration(context, layoutManager.orientation))
         binding.listViewSavedFeedback.adapter = savedFeedbackAdapter
 
-        binding.listViewSavedFeedback.setAdapter(savedFeedbackAdapter)
+       // binding.listViewSavedFeedback.setAdapter(savedFeedbackAdapter)
 
         apiCall()
     }
