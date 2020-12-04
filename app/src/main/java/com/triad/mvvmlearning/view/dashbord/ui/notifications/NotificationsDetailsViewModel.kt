@@ -8,14 +8,15 @@ import com.triad.mvvmlearning.network.Resource
 import com.triad.mvvmlearning.repository.LoginRepository
 import com.triad.mvvmlearning.repository.NotificationRepository
 import com.triad.mvvmlearning.responses.loginresponse.LoginResponse
+import com.triad.mvvmlearning.responses.loginresponse.SavedFeedbackResponse
 import kotlinx.coroutines.launch
 
 class NotificationsDetailsViewModel(
     private var repository: NotificationRepository) : ViewModel() {
 
-    private val _loginResponse: MutableLiveData<Resource<Array<LoginResponse>>> = MutableLiveData()
+    private val _loginResponse: MutableLiveData<SavedFeedbackResponse> = MutableLiveData()
 
-    val loginResponse: LiveData<Resource<Array<LoginResponse>>>
+    val loginResponse: LiveData<SavedFeedbackResponse>
         get() = _loginResponse
 
     fun login(body: HashMap<String,String>) = viewModelScope.launch {

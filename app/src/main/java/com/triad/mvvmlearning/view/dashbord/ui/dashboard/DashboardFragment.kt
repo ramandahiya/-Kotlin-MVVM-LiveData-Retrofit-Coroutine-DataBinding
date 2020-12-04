@@ -2,11 +2,14 @@ package com.triad.mvvmlearning.view.dashbord.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import com.triad.mvvmlearning.R
 import com.triad.mvvmlearning.databinding.FragmentDashboardBinding
 import com.triad.mvvmlearning.network.DashboardApi
@@ -19,6 +22,13 @@ class DashboardFragment  : BaseFragment<DashboardViewModel, FragmentDashboardBin
   override fun onActivityCreated(savedInstanceState: Bundle?) {
 
     super.onActivityCreated(savedInstanceState)
+
+
+    binding.title.setOnClickListener{
+
+      val bundle = bundleOf("amount" to "data")
+      it.findNavController().navigate(R.id.action_navigation_dashboard_to_navigation_savedfeedback, bundle)
+    }
 
 
     viewModel.loginResponse.observe(viewLifecycleOwner, Observer {

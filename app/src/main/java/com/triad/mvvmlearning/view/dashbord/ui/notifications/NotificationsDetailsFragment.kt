@@ -25,21 +25,10 @@ class NotificationsDetailsFragment  : BaseFragment<NotificationsDetailsViewModel
 
     viewModel.loginResponse.observe(viewLifecycleOwner, Observer {
 
-      when (it) {
-        is Resource.Success -> {
-
-//          binding.viewmodel = it.value
 
 
           Toast.makeText( requireContext(),"Logged In", Toast.LENGTH_SHORT).show()
 
-        }
-
-        is Resource.Failure -> {
-
-          Toast.makeText(requireContext(),"Login Failed", Toast.LENGTH_SHORT).show()
-        }
-      }
 
     })
 

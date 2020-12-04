@@ -56,6 +56,15 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding, LoginRe
 
                 is Resource.Failure -> {
 
+                    val loginIntent = Intent(
+                        getActivity(),
+                        MainActivity::class.java
+                    )
+                    loginIntent.putExtra("from", "login")
+                    startActivity(loginIntent)
+                    val activity = getActivity() as Activity
+                    activity.finish()
+
                     Toast.makeText(requireContext(), "Login Failed", Toast.LENGTH_SHORT).show()
                 }
             }

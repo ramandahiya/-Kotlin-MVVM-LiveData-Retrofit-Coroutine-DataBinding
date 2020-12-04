@@ -14,6 +14,7 @@
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
 
+            android:id="@+id/title"
             android:layout_marginLeft="15dp"
             android:text="Dashboard"
             android:textSize="40dp"

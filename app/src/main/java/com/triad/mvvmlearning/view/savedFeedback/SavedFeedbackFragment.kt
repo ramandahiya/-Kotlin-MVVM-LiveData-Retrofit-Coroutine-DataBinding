@@ -77,7 +77,7 @@ class SavedFeedbackFragment : BaseFragment<SavedFeedbackViewModel, FragmentSaved
 
        // binding.listViewSavedFeedback.setAdapter(savedFeedbackAdapter)
 
-        apiCall()
+       // apiCall()
     }
 
 

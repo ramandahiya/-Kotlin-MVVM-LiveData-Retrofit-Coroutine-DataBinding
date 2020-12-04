@@ -15,7 +15,11 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.triad.mvvmlearning.view.dashbord.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_navigation_savedfeedback"
+            app:destination="@id/navigation_savedfeedback" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
@@ -32,5 +36,10 @@
         android:name="com.triad.mvvmlearning.view.dashbord.ui.notifications.NotificationsDetailsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications_details" />
+    <fragment
+        android:id="@+id/navigation_savedfeedback"
+        android:name="com.triad.surveyamazon.view.savedFeedback.SavedFeedbackFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_saved_feedback" />
 
 </navigation>

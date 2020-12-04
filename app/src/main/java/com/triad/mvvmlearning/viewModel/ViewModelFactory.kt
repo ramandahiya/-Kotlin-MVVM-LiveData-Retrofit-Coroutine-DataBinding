@@ -5,8 +5,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.triad.mvvmlearning.repository.*
 import com.triad.mvvmlearning.view.dashbord.ui.dashboard.DashboardViewModel
 import com.triad.mvvmlearning.view.dashbord.ui.home.HomeViewModel
+import com.triad.mvvmlearning.view.dashbord.ui.notifications.NotificationsDetailsViewModel
 import com.triad.mvvmlearning.view.dashbord.ui.notifications.NotificationsViewModel
 import com.triad.mvvmlearning.view.login.LoginViewModel
+import com.triad.surveyamazon.view.savedFeedback.SavedFeedbackViewModel
 
 @Suppress("UNCHECKED_CAST")
 class ViewModelFactory(private val repository: BaseRepository): ViewModelProvider.NewInstanceFactory(){
@@ -29,6 +31,13 @@ class ViewModelFactory(private val repository: BaseRepository): ViewModelProvide
 
             modelClass.isAssignableFrom(DashboardViewModel::class.java) -> DashboardViewModel(
                 repository as DashboardRepository
+            ) as T
+
+            modelClass.isAssignableFrom(NotificationsDetailsViewModel::class.java) -> NotificationsDetailsViewModel(
+                repository as NotificationRepository
+            ) as T
+            modelClass.isAssignableFrom(SavedFeedbackViewModel::class.java) -> SavedFeedbackViewModel(
+                repository as SavedFeedRepository
             ) as T
 
             else -> throw IllegalArgumentException("ViewModel Not Found")
